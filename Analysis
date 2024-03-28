@@ -1,0 +1,42 @@
+Analysis: Worst-Case Big-O Notation
+
+Task 0:
+Only Get item in list -> O(1)
+
+Task 1:
+Input is 2 list [texts] and [calls]
+- We using loop and access 2 list, so worst case could be O(n) + O(n)
+- Get length result_set -> O(1)
+So here is approximation: O(n) + O(n) + O(1) = O(n)
+
+Task 2:
+- Access [calls] by for loop: O(n)
+- Access [phone_with_time_spend_list] by for loop (line 35): O(n)
+	Update dict (line 37): O(n)
+	Add new dict (line 40): O(1)
+- Find max: O(n)
+So here is approximation: O(n) + O(n) * (O(n) + O(1)) + O(n) = O(n^2 + 2n + 1) = O(n^2)
+
+Task 3:
+Part A
+- Access item in [calls]: O(n)
+- Access item in [receiver_phone_list]: O(n)
+	Worst case is fixed line case, use findall() function: O(n)
+	Add item to [code_list]: O(1)
+- Use sorted() : O(n log n)
+Part B
+- Access item in [receiver_phone_list]: O(n)
+So here is approximation: O(n) + O(n) * O(n) * O(1) + O(n log n) + O(n) = O(n^2 + 2n + 1 + n log n) = O(n^2)
+
+Task 4:
+- Access item in [calls] 2 times and [texts] 2 times: O(4n)
+- Access caller in [callers]: O(n)
+	Access item in set of (call_receiver + text_sender + text_receiver): O(3n)
+	Add item: O(1)
+- sorted() set: O(n log n)
+- print sorted list: O(n)
+So here is approximation: O(4n) + O(n) * O(3n) * O(1) + O(n log n) + O(n) = O(3n^2 + 5n + n log n + 1) = (On^2)
+
+Refer:
+https://wiki.python.org/moin/TimeComplexity
+https://www.bigocheatsheet.com/
